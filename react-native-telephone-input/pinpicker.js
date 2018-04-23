@@ -3,29 +3,12 @@
 
 'use strict';
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {
-   Text,
-   StyleSheet,
-   TextInput,
-   View,
-}  from 'react-native';
-
-import RegisterAPI    from '../../lib/libregisterapi'
-import FilledButton   from '../filledbutton'
-import CommonStyles   from '../commonstyles'
-import LoginPINVerify from './loginpinverify'
-
-import Icon from 'react-native-vector-icons/FontAwesome'
-
-import { parse, format, asYouType } from 'libphonenumber-js'
+import { StyleSheet, Text, TextInput, View, } from 'react-native';
+import PropTypes from 'prop-types';
 /* maps callingCode -> CCA2        */
-import CallingCodeToCCA2 from 'libphonenumber-js/metadata.min'
-
-import CountryPicker from './countrypicker'
 /* maps CCA2 -> CountryLocalDetails */
-import Countries     from './data'
 
 
 var styles = StyleSheet.create({
@@ -131,8 +114,8 @@ class PinPicker extends React.Component {
 }
 
 PinPicker.PropTypes = {
-    onChangePin: React.PropTypes.func.isRequired,
-    numDigits: React.PropTypes.number,
+    onChangePin: PropTypes.func.isRequired,
+    numDigits: PropTypes.number,
 }
 
 PinPicker.defaultProps = {

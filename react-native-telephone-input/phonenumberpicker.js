@@ -3,25 +3,18 @@
 
 'use strict';
 
-import React, {Component} from 'react';
-import {
-    Image,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
-    TouchableOpacity,
-}  from 'react-native';
+import React, { Component } from 'react';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 
 
-import { parse, format, asYouType } from 'libphonenumber-js'
+import { asYouType } from 'libphonenumber-js'
 /* maps callingCode -> CCA2        */
 import CallingCodeToCCA2 from 'libphonenumber-js/metadata.min'
 
 import CountryPicker from './countrypicker'
 /* maps CCA2 -> CountryLocalDetails */
-import Countries     from './data'
-
+import Countries from './data'
+import PropTypes from 'prop-types';
 
 var styles = StyleSheet.create({
     containerCol: {
@@ -284,8 +277,8 @@ class PhoneNumberPicker extends React.Component {
 }
 
 PhoneNumberPicker.PropTypes = {
-    onChange: React.PropTypes.Function,
-    countryHint: React.PropTypes.Object,
+    onChange: PropTypes.Function,
+    countryHint: PropTypes.Object,
 }
 
 PhoneNumberPicker.defaultProps = {
