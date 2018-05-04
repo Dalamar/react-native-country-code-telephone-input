@@ -3,7 +3,7 @@
 
 'use strict';
 
-import { Component } from 'react';
+import React from 'react';
 import { Image, Modal, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -47,7 +47,7 @@ var styles = StyleSheet.create({
 });
 
 
-class CountryPicker extends Component {
+class CountryPicker extends React.Component {
     static propTypes = {
         onChange: PropTypes.func.isRequired,
     }
