@@ -199,7 +199,7 @@ class PhoneNumberPicker extends React.Component {
     }
 
     componentDidMount() {
- 
+
         setTimeout(
             () => {
                 this.textInputPhoneNumber.focus()},
@@ -252,6 +252,7 @@ class PhoneNumberPicker extends React.Component {
                      underlineColorAndroid="transparent"
                      onChangeText={this.CallingCodeChanged.bind(this)}
                      value={"+" + this.state.country.callingCode}
+                     returnKeyType="done"
                      keyboardType="phone-pad"/>
 
                      <TextInput style={[styles.TextInputPhoneNumber,{flex:1}]}
@@ -266,6 +267,7 @@ class PhoneNumberPicker extends React.Component {
                      placeholder=" Enter your phone number"
                      value={this.PhoneNumberFormatAsYouType()}
                      autoFocus={true}
+                     returnKeyType="done"
                      keyboardType="phone-pad"/>
 
                     </View>
