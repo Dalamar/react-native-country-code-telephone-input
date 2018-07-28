@@ -63,12 +63,15 @@ class PhoneNumberPicker extends React.Component {
     countryHint: { name: 'United States', cca2: 'US', callingCode: '1' },
   };
 
-  state = {
-    phoneNo: '',
-    country: props.countryHint,
-    onChange: props.onChange,
-    skipFormatAsYouType: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      phoneNo: '',
+      country: props.countryHint,
+      onChange: props.onChange,
+      skipFormatAsYouType: false
+    };
+  }
 
   numberChanged(country, callingCode, phoneNumber) {
     callingCode = callingCode + '';
